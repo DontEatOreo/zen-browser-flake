@@ -60,6 +60,7 @@
         libglvnd
         pipewire
         speechd
+        gsettings-desktop-schemas
       ]
       ++ (with pkgs.xorg; [
         libxcb
@@ -90,7 +91,7 @@
 
         phases = ["installPhase" "fixupPhase"];
 
-        nativeBuildInputs = [pkgs.makeWrapper pkgs.copyDesktopItems pkgs.wrapGAppsHook];
+        nativeBuildInputs = [pkgs.makeWrapper pkgs.copyDesktopItems pkgs.wrapGAppsHook3];
 
         installPhase = ''
           runHook preInstall
